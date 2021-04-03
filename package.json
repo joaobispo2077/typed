@@ -1,0 +1,15 @@
+{
+  "name": "typed",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/joaobispo2077/typed.git",
+  "author": "João Bispo <vitor.vi10@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "live-server",
+    "dev:compile": "tsc -w"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
