@@ -30,7 +30,7 @@ console.log(hobbies);
 let address: [string, number] = ["rua das pizzasas", 12002];
 console.log(address);
 
-//enums
+// enums
 
 enum Color {
   Yellow,  // 0
@@ -46,3 +46,12 @@ let color: Color = Color.Orange;
 console.log("color", color);
 
 console.log(Color.Black, Color.White);
+
+// any
+
+let car: any = 'BMW';
+console.log("any car",car);
+car = 10;
+console.log("any car",car);
+car = {type: "road"};
+console.log("any car",car);

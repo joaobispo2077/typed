@@ -24,7 +24,7 @@ console.log(hobbies);
 // tuplas
 let address = ["rua das pizzasas", 12002];
 console.log(address);
-//enums
+// enums
 var Color;
 (function (Color) {
     Color[Color["Yellow"] = 0] = "Yellow";
@@ -39,3 +39,10 @@ var Color;
 let color = Color.Orange;
 console.log("color", color);
 console.log(Color.Black, Color.White);
+// any
+let car = 'BMW';
+console.log("any car", car);
+car = 10;
+console.log("any car", car);
+car = { type: "road" };
+console.log("any car", car);
