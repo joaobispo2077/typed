@@ -1,31 +1,26 @@
+"use strict";
 // The Javascript is a programing language with dynamic types
 //string
-let firstName: string = 'João';
+let firstName = 'João';
 console.log(firstName);
 // name = 20
-
 //numbers
-let age: number = 21; 
+let age = 21;
 // age = "batata";
 console.log(age);
-  
 //boolean
-let hasHobbies: boolean = false;
+let hasHobbies = false;
 // hasHobbies = 1;
 console.log(hasHobbies);
-
 // explicit types
-
-let actualAge: number;
+let actualAge;
 actualAge = 496498465;
 console.log(typeof actualAge);
-
 // array
-let hobbies: any[] = ["Programar", "Comer", "Assistir"];
+let hobbies = ["Programar", "Comer", "Assistir"];
 console.log(hobbies[0]);
-hobbies = [100, 200, 300]
+hobbies = [100, 200, 300];
 console.log(hobbies);
-
 // tuplas
-let address: [string, number] = ["rua das pizzasas", 12002];
+let address = ["rua das pizzasas", 12002];
 console.log(address);
