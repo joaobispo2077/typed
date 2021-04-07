@@ -206,3 +206,27 @@ const productWithValidation: {
 }
 
 productWithValidation.validate()
+
+// null type
+
+let height: null | number;
+height = null;
+console.log("height", height);
+height = 10;
+console.log("height", height);
+height = null;
+console.log("height", height);
+
+type Contact = {
+  name: string,
+  tel1: string,
+  tel2: string | null
+}
+
+const contact1: Contact = {
+  name: 'Ciclano',
+  tel1: '4654654',
+  tel2: null
+}
+
+console.log("contact1", contact1);

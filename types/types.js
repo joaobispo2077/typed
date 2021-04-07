@@ -144,3 +144,17 @@ const productWithValidation = {
     }
 };
 productWithValidation.validate();
+// null type
+let height;
+height = null;
+console.log("height", height);
+height = 10;
+console.log("height", height);
+height = null;
+console.log("height", height);
+const contact1 = {
+    name: 'Ciclano',
+    tel1: '4654654',
+    tel2: null
+};
+console.log("contact1", contact1);
