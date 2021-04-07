@@ -46,3 +46,26 @@ car = 10;
 console.log("any car", car);
 car = { type: "road" };
 console.log("any car", car);
+// functions
+function sayMyName() {
+    return firstName;
+}
+console.log("f", sayMyName());
+function sayHi() {
+    console.log('hi');
+}
+sayHi();
+function multiplicate(number1, number2) {
+    return number1 * number2;
+}
+console.log(multiplicate(2, 10));
+// functions as types
+const teste = function (numberTest, text) {
+    console.log(text);
+    if (numberTest < 0)
+        return false;
+    return true;
+};
+let calc; // variable with function type
+calc = multiplicate;
+console.log(calc(10, 10));
