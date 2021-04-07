@@ -76,3 +76,27 @@ let user = {
 };
 // user = {type: 'surf'}
 console.log(user);
+// Challenge
+/*
+ Criar um objeto funcionário com:
+ - Array de strings com os nomes dos supervisores
+ - Função de bater o ponto que recebe hora e retorna uma string
+    - retorna ponto norma se o ponto for menor ou igual a 8
+    - retorna Ponto fora do horário se o ponto for maior que 8
+*/
+let employee;
+let supervisors = ['Lucia', 'Ana'];
+function hitPoint(hour) {
+    if (hour > 8)
+        return "Ponto fora do horário";
+    else
+        return "Ponto normal";
+}
+employee = {
+    supervisors,
+    hitPoint
+};
+console.log(employee);
+console.log(employee.supervisors);
+console.log(employee.hitPoint(8));
+console.log(employee.hitPoint(9));
