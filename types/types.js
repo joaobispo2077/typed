@@ -121,3 +121,26 @@ let numberText;
 console.log(`Minha nota eh: ${note}`);
 numberText = String(note);
 console.log(`Minha nota eh: ${numberText}`);
+// Checking types
+let anyvalue = 30;
+if (typeof anyvalue === 'number')
+    console.log('anyvalue is number type');
+else
+    console.log('anyvalue is not anumber type');
+// type never returns => function that never reachable in end 
+// function with infinity loop and function that throw error
+function failure(msg) {
+    throw new Error(msg);
+}
+const productWithValidation = {
+    name: "Azeitona",
+    price: 10,
+    validate() {
+        if (!this.name || this.name.trim().length === 0)
+            failure('Produto com n0ome inválido');
+        if (!this.price || this.price <= 0)
+            failure('Produto com preço inválido');
+        console.log("Produto válido");
+    }
+};
+productWithValidation.validate();
