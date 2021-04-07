@@ -29,3 +29,20 @@ console.log(hobbies);
 // tuplas
 let address: [string, number] = ["rua das pizzasas", 12002];
 console.log(address);
+
+//enums
+
+enum Color {
+  Yellow,  // 0
+  Blue,  // 1
+  Orange,  // 2
+  Gray = 150, // 150
+  Brown = 150, // 150
+  Black = 9654,
+  White // 9655
+};
+
+let color: Color = Color.Orange;
+console.log("color", color);
+
+console.log(Color.Black, Color.White);
