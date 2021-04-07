@@ -91,3 +91,18 @@ const teste = function(numberTest: number, text: string ): boolean {
 let calc: (number1: number, number2: number) => number; // variable with function type
 calc = multiplicate;
 console.log(calc(10,10));
+
+
+// objects
+let user: {
+  name: string,
+  age: number,
+  type?: string // optional type
+} = {
+ name: 'João Topperson',
+ age: 21564165
+}
+
+// user = {type: 'surf'}
+
+console.log(user);

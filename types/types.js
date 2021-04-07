@@ -69,3 +69,10 @@ const teste = function (numberTest, text) {
 let calc; // variable with function type
 calc = multiplicate;
 console.log(calc(10, 10));
+// objects
+let user = {
+    name: 'João Topperson',
+    age: 21564165
+};
+// user = {type: 'surf'}
+console.log(user);
