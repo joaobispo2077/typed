@@ -136,3 +136,22 @@ console.log(employee);
 console.log(employee.supervisors);
 console.log(employee.hitPoint(8));
 console.log(employee.hitPoint(9));
+
+// type (Alias)
+
+type Employee = { 
+  supervisors: string[], 
+  hitPoint: (hour: number) => string
+}
+
+let employee2: Employee;
+
+employee2 = {
+  supervisors,
+  hitPoint
+}
+
+console.log(employee2);
+console.log(employee2.supervisors);
+console.log(employee2.hitPoint(8));
+console.log(employee2.hitPoint(9));
