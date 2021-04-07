@@ -109,3 +109,15 @@ console.log(employee2);
 console.log(employee2.supervisors);
 console.log(employee2.hitPoint(8));
 console.log(employee2.hitPoint(9));
+// Union types
+// parse with union TypeS
+let note0 = 9;
+console.log(`Minha nota eh: ${note0}`);
+note0 = String(note0);
+console.log(`Minha nota eh: ${note0}`);
+// parse without union types
+let note = 10;
+let numberText;
+console.log(`Minha nota eh: ${note}`);
+numberText = String(note);
+console.log(`Minha nota eh: ${numberText}`);
