@@ -112,3 +112,31 @@ const logFoodScheduleWithRest = (...args: [number, string, boolean]) : void => c
 
 logFoodScheduleWithRest( 20 , 'Hamburguer',false);
 logFoodScheduleWithRest(...foodSchedule);
+
+// Desestructuring (array)
+
+const carSpecs = ['Motor Zetec 2.1', 2021];
+// const moto = carSpecs[0];
+// const year = carSpecs[1];
+const [motor, year] = carSpecs;
+console.log(carSpecs);
+console.log(motor);
+console.log(year);
+
+// Desestructuring (object)
+
+const item = {
+  name: 'WaterColler 240ml',
+  price: 350,
+  measured: {
+    height: 4,
+    weight: 30,
+  }
+};
+
+const itemname = item.name;
+const itemprice = item.price;
+
+const { name: productName, price: productPrice, measured } = item;
+
+console.log(productName, productPrice, measured);

@@ -90,4 +90,25 @@ var logFoodScheduleWithRest = function () {
 };
 logFoodScheduleWithRest(20, 'Hamburguer', false);
 logFoodScheduleWithRest.apply(void 0, foodSchedule);
+// Desestructuring (array)
+var carSpecs = ['Motor Zetec 2.1', 2021];
+// const moto = carSpecs[0];
+// const year = carSpecs[1];
+var motor = carSpecs[0], year = carSpecs[1];
+console.log(carSpecs);
+console.log(motor);
+console.log(year);
+// Desestructuring (object)
+var item = {
+    name: 'WaterColler 240ml',
+    price: 350,
+    measured: {
+        height: 4,
+        weight: 30,
+    }
+};
+var itemname = item.name;
+var itemprice = item.price;
+var productName = item.name, productPrice = item.price, measured = item.measured;
+console.log(productName, productPrice, measured);
 //# sourceMappingURL=index.js.map
