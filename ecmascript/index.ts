@@ -76,3 +76,39 @@ const regressiveClock = (initialTime: number = 3, finalTime: number = initialTim
 regressiveClock();
 regressiveClock(3);
 regressiveClock(5, 0);
+
+// Rest & Spread 
+
+const numbers = [3, 6, 10, 5151, -4];
+
+console.log(Math.max(...numbers)); // spread operator
+
+const classA: string[] = ['Lana', 'Alana', 'Sofia'];
+const classB: string[] = ['Clara', 'Nicole', 'Lorena', ...classA]; // spread operator
+
+console.log(classB);
+
+function getArrayOfTwoNumbers(logNumber: number, logNumber2: number, ...args: number[]): number[] { // rest operator
+  console.log(logNumber);
+  console.log(logNumber2);
+  return args;
+
+}
+
+const twoNumbers = getArrayOfTwoNumbers(2, 3, 4, 5, 6);
+console.log(150, 176, twoNumbers);
+console.log(getArrayOfTwoNumbers(200, 132, ...numbers));
+
+// Rest & Spread with Tuple
+
+const foodSchedule: [number, string, boolean] = [10, 'Potato', true];
+
+const logFoodSchedule = (hour: number, food: string, eat: boolean) : void => console.log(`eat: ${eat}, food ${food} at ${hour}`);
+
+logFoodSchedule(...foodSchedule); // spread operator
+
+//                           rest operator
+const logFoodScheduleWithRest = (...args: [number, string, boolean]) : void => console.log(`eat: ${args[2]}, food ${args[1]} at ${args[0]}`);
+
+logFoodScheduleWithRest( 20 , 'Hamburguer',false);
+logFoodScheduleWithRest(...foodSchedule);

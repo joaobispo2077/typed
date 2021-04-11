@@ -1,11 +1,11 @@
 "use strict";
-let bankAccount = {
+var bankAccount = {
     balance: 3456,
-    deposit(value) {
+    deposit: function (value) {
         this.balance += value;
     }
 };
-let holderAccount = {
+var holderAccount = {
     name: 'Ana Silva',
     bankAccount: bankAccount,
     contacts: ['34567890', '98765432']

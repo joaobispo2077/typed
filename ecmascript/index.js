@@ -1,10 +1,15 @@
 "use strict";
-let isPossible = '?';
+var __spreadArray = (this && this.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+var isPossible = '?';
 console.log(isPossible);
-let isCold = true;
+var isCold = true;
 if (isCold)
     var action = 'Use casaco'; //hoisting with var - içar
-const foodname = 'batata';
+var foodname = 'batata';
 //  foodname = 'potato';
 console.log(foodname);
 var secret = 'external secret';
@@ -15,14 +20,14 @@ function revel() {
 revel(); // shadowing
 console.log(secret);
 // Arrow function
-const sumNum = function (a, b) {
+var sumNum = function (a, b) {
     return a + b;
 };
-const subtract = (a, b) => a - b;
+var subtract = function (a, b) { return a - b; };
 console.log(subtract(10, 2));
-const sayHello = () => console.log('Hello!');
+var sayHello = function () { return console.log('Hello!'); };
 sayHello();
-const talkWithPeople = (people) => console.log(`Hi ${people}`);
+var talkWithPeople = function (people) { return console.log("Hi " + people); };
 talkWithPeople('Sofia');
 // this with arrow  fn and normal fn
 //  function normalThis() {
@@ -40,15 +45,49 @@ Em funções tradicionais o this pode variar de acordo com a chamada da função
 mas já em arrow function o this sempre aponta para o contexto em que ela foi definida
 */
 // Default Params
-const regressiveClock = (initialTime = 3, finalTime = initialTime - 5) => {
+var regressiveClock = function (initialTime, finalTime) {
+    if (initialTime === void 0) { initialTime = 3; }
+    if (finalTime === void 0) { finalTime = initialTime - 5; }
     console.log(initialTime);
     while (initialTime > finalTime) {
         --initialTime;
         console.log(initialTime);
     }
-    console.log(`Fim da contagem regressiva com um tempo inicial de ${initialTime} e tempo final de ${finalTime}`);
+    console.log("Fim da contagem regressiva com um tempo inicial de " + initialTime + " e tempo final de " + finalTime);
 };
 regressiveClock();
 regressiveClock(3);
 regressiveClock(5, 0);
+// Rest & Spread 
+var numbers = [3, 6, 10, 5151, -4];
+console.log(Math.max.apply(Math, numbers)); // spread operator
+var classA = ['Lana', 'Alana', 'Sofia'];
+var classB = __spreadArray(['Clara', 'Nicole', 'Lorena'], classA); // spread operator
+console.log(classB);
+function getArrayOfTwoNumbers(logNumber, logNumber2) {
+    var args = [];
+    for (var _i = 2; _i < arguments.length; _i++) {
+        args[_i - 2] = arguments[_i];
+    }
+    console.log(logNumber);
+    console.log(logNumber2);
+    return args;
+}
+var twoNumbers = getArrayOfTwoNumbers(2, 3, 4, 5, 6);
+console.log(150, 176, twoNumbers);
+console.log(getArrayOfTwoNumbers.apply(void 0, __spreadArray([200, 132], numbers)));
+// Rest & Spread with Tuple
+var foodSchedule = [10, 'Potato', true];
+var logFoodSchedule = function (hour, food, eat) { return console.log("eat: " + eat + ", food " + food + " at " + hour); };
+logFoodSchedule.apply(void 0, foodSchedule); // spread operator
+//                           rest operator
+var logFoodScheduleWithRest = function () {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    return console.log("eat: " + args[2] + ", food " + args[1] + " at " + args[0]);
+};
+logFoodScheduleWithRest(20, 'Hamburguer', false);
+logFoodScheduleWithRest.apply(void 0, foodSchedule);
 //# sourceMappingURL=index.js.map
