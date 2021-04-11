@@ -1,24 +1,24 @@
 "use strict";
-var channel = 'Gaveta';
-var subscribers = 10000;
+let channel = 'Gaveta';
+let subscribers = 10000;
 // channel = subscribers;
 console.log(channel);
 firstName = 'tester';
 console.log(firstName);
 console.log("hello");
 (function () {
-    var nome = 'tester';
+    let nome = 'tester';
     console.log(nome);
 })();
 console.log('ata');
 function sum(a, b) {
     return a + b;
 }
-var anything;
+let anything;
 anything = 56415;
 anything = 'sadfasd';
 function greetings(isMorning) {
-    var greeting;
+    let greeting;
     if (isMorning)
         greeting = 'Bom diaa!';
     else
