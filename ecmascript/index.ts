@@ -140,3 +140,10 @@ const itemprice = item.price;
 const { name: productName, price: productPrice, measured } = item;
 
 console.log(productName, productPrice, measured);
+
+// Template Strings
+const site = 'studygram 42';
+const accessSite = 16546;
+
+console.log(`O site ${site} teve a quantidade de acessos: ${accessSite}`);
+console.log('O site ' + site + ' teve a quantidade de acessos: ' + accessSite);

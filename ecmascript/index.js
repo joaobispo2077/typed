@@ -111,4 +111,9 @@ var itemname = item.name;
 var itemprice = item.price;
 var productName = item.name, productPrice = item.price, measured = item.measured;
 console.log(productName, productPrice, measured);
+// Template Strings
+var site = 'studygram 42';
+var accessSite = 16546;
+console.log("O site " + site + " teve a quantidade de acessos: " + accessSite);
+console.log('O site ' + site + ' teve a quantidade de acessos: ' + accessSite);
 //# sourceMappingURL=index.js.map
