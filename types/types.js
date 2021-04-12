@@ -1,28 +1,28 @@
 "use strict";
 // The Javascript is a programing language with dynamic types
 //string
-var firstName = 'João';
+let firstName = 'João';
 console.log(firstName);
 // name = 20
 //numbers
-var age = 21;
+let age = 21;
 // age = "batata";
 console.log(age);
 //boolean
-var hasHobbies = false;
+let hasHobbies = false;
 // hasHobbies = 1;
 console.log(hasHobbies);
 // explicit types
-var actualAge;
+let actualAge;
 actualAge = 496498465;
 console.log(typeof actualAge);
 // array
-var hobbies = ["Programar", "Comer", "Assistir"];
+let hobbies = ["Programar", "Comer", "Assistir"];
 console.log(hobbies[0]);
 hobbies = [100, 200, 300];
 console.log(hobbies);
 // tuplas
-var address = ["rua das pizzasas", 12002];
+let address = ["rua das pizzasas", 12002];
 console.log(address);
 // enums
 var Color;
@@ -36,11 +36,11 @@ var Color;
     Color[Color["White"] = 9655] = "White"; // 9655
 })(Color || (Color = {}));
 ;
-var color = Color.Orange;
+let color = Color.Orange;
 console.log("color", color);
 console.log(Color.Black, Color.White);
 // any
-var car = 'BMW';
+let car = 'BMW';
 console.log("any car", car);
 car = 10;
 console.log("any car", car);
@@ -60,17 +60,17 @@ function multiplicate(number1, number2) {
 }
 console.log(multiplicate(2, 10));
 // functions as types
-var teste = function (numberTest, text) {
+const teste = function (numberTest, text) {
     console.log(text);
     if (numberTest < 0)
         return false;
     return true;
 };
-var calc; // variable with function type
+let calc; // variable with function type
 calc = multiplicate;
 console.log(calc(10, 10));
 // objects
-var user = {
+let user = {
     name: 'João Topperson',
     age: 21564165
 };
@@ -84,8 +84,8 @@ console.log(user);
     - retorna ponto norma se o ponto for menor ou igual a 8
     - retorna Ponto fora do horário se o ponto for maior que 8
 */
-var employee;
-var supervisors = ['Lucia', 'Ana'];
+let employee;
+let supervisors = ['Lucia', 'Ana'];
 function hitPoint(hour) {
     if (hour > 8)
         return "Ponto fora do horário";
@@ -93,17 +93,17 @@ function hitPoint(hour) {
         return "Ponto normal";
 }
 employee = {
-    supervisors: supervisors,
-    hitPoint: hitPoint
+    supervisors,
+    hitPoint
 };
 console.log(employee);
 console.log(employee.supervisors);
 console.log(employee.hitPoint(8));
 console.log(employee.hitPoint(9));
-var employee2;
+let employee2;
 employee2 = {
-    supervisors: supervisors,
-    hitPoint: hitPoint
+    supervisors,
+    hitPoint
 };
 console.log(employee2);
 console.log(employee2.supervisors);
@@ -111,18 +111,18 @@ console.log(employee2.hitPoint(8));
 console.log(employee2.hitPoint(9));
 // Union types
 // parse with union TypeS
-var note0 = 9;
-console.log("Minha nota eh: " + note0);
+let note0 = 9;
+console.log(`Minha nota eh: ${note0}`);
 note0 = String(note0);
-console.log("Minha nota eh: " + note0);
+console.log(`Minha nota eh: ${note0}`);
 // parse without union types
-var note = 10;
-var numberText;
-console.log("Minha nota eh: " + note);
+let note = 10;
+let numberText;
+console.log(`Minha nota eh: ${note}`);
 numberText = String(note);
-console.log("Minha nota eh: " + numberText);
+console.log(`Minha nota eh: ${numberText}`);
 // Checking types
-var anyvalue = 30;
+let anyvalue = 30;
 if (typeof anyvalue === 'number')
     console.log('anyvalue is number type');
 else
@@ -132,10 +132,10 @@ else
 function failure(msg) {
     throw new Error(msg);
 }
-var productWithValidation = {
+const productWithValidation = {
     name: "Azeitona",
     price: 10,
-    validate: function () {
+    validate() {
         if (!this.name || this.name.trim().length === 0)
             failure('Produto com n0ome inválido');
         if (!this.price || this.price <= 0)
@@ -145,14 +145,14 @@ var productWithValidation = {
 };
 productWithValidation.validate();
 // null type
-var height;
+let height;
 height = null;
 console.log("height", height);
 height = 10;
 console.log("height", height);
 height = null;
 console.log("height", height);
-var contact1 = {
+const contact1 = {
     name: 'Ciclano',
     tel1: '4654654',
     tel2: null

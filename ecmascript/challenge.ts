@@ -33,3 +33,22 @@ const cientist = {fistName: "Will", expierence: 12};
 const {fistName, expierence} = cientist;
 console.log(fistName, expierence);
 
+// extra
+
+const waitForCallback = (second: number, callback: (text: string) => void) => 
+  setTimeout(() => callback(`Passaram ${second} segundos`), second * 1000);
+
+waitForCallback(3, function(data: string){
+  console.log(data);
+});
+
+const waitForPromise = (second: number) => new Promise((resolve: any, reject: any): void => {
+    setTimeout(() => resolve(`Passaram ${second} segundos`), second * 1000);
+});
+
+
+waitForPromise(3.5).then(console.log);
+
+fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+.then(console.log)
+.catch(console.error)

@@ -1,15 +1,10 @@
 "use strict";
-var __spreadArray = (this && this.__spreadArray) || function (to, from) {
-    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
-        to[j] = from[i];
-    return to;
-};
-var isPossible = '?';
+let isPossible = '?';
 console.log(isPossible);
-var isCold = true;
+let isCold = true;
 if (isCold)
     var action = 'Use casaco'; //hoisting with var - içar
-var foodname = 'batata';
+const foodname = 'batata';
 //  foodname = 'potato';
 console.log(foodname);
 var secret = 'external secret';
@@ -20,14 +15,14 @@ function revel() {
 revel(); // shadowing
 console.log(secret);
 // Arrow function
-var sumNum = function (a, b) {
+const sumNum = function (a, b) {
     return a + b;
 };
-var subtract = function (a, b) { return a - b; };
+const subtract = (a, b) => a - b;
 console.log(subtract(10, 2));
-var sayHello = function () { return console.log('Hello!'); };
+const sayHello = () => console.log('Hello!');
 sayHello();
-var talkWithPeople = function (people) { return console.log("Hi " + people); };
+const talkWithPeople = (people) => console.log(`Hi ${people}`);
 talkWithPeople('Sofia');
 // this with arrow  fn and normal fn
 //  function normalThis() {
@@ -45,61 +40,49 @@ Em funções tradicionais o this pode variar de acordo com a chamada da função
 mas já em arrow function o this sempre aponta para o contexto em que ela foi definida
 */
 // Default Params
-var regressiveClock = function (initialTime, finalTime) {
-    if (initialTime === void 0) { initialTime = 3; }
-    if (finalTime === void 0) { finalTime = initialTime - 5; }
+const regressiveClock = (initialTime = 3, finalTime = initialTime - 5) => {
     console.log(initialTime);
     while (initialTime > finalTime) {
         --initialTime;
         console.log(initialTime);
     }
-    console.log("Fim da contagem regressiva com um tempo inicial de " + initialTime + " e tempo final de " + finalTime);
+    console.log(`Fim da contagem regressiva com um tempo inicial de ${initialTime} e tempo final de ${finalTime}`);
 };
 regressiveClock();
 regressiveClock(3);
 regressiveClock(5, 0);
 // Rest & Spread 
-var numbers = [3, 6, 10, 5151, -4];
-console.log(Math.max.apply(Math, numbers)); // spread operator
-var classA = ['Lana', 'Alana', 'Sofia'];
-var classB = __spreadArray(['Clara', 'Nicole', 'Lorena'], classA); // spread operator
+const numbers = [3, 6, 10, 5151, -4];
+console.log(Math.max(...numbers)); // spread operator
+const classA = ['Lana', 'Alana', 'Sofia'];
+const classB = ['Clara', 'Nicole', 'Lorena', ...classA]; // spread operator
 console.log(classB);
-function getArrayOfTwoNumbers(logNumber, logNumber2) {
-    var args = [];
-    for (var _i = 2; _i < arguments.length; _i++) {
-        args[_i - 2] = arguments[_i];
-    }
+function getArrayOfTwoNumbers(logNumber, logNumber2, ...args) {
     console.log(logNumber);
     console.log(logNumber2);
     return args;
 }
-var twoNumbers = getArrayOfTwoNumbers(2, 3, 4, 5, 6);
+const twoNumbers = getArrayOfTwoNumbers(2, 3, 4, 5, 6);
 console.log(150, 176, twoNumbers);
-console.log(getArrayOfTwoNumbers.apply(void 0, __spreadArray([200, 132], numbers)));
+console.log(getArrayOfTwoNumbers(200, 132, ...numbers));
 // Rest & Spread with Tuple
-var foodSchedule = [10, 'Potato', true];
-var logFoodSchedule = function (hour, food, eat) { return console.log("eat: " + eat + ", food " + food + " at " + hour); };
-logFoodSchedule.apply(void 0, foodSchedule); // spread operator
+const foodSchedule = [10, 'Potato', true];
+const logFoodSchedule = (hour, food, eat) => console.log(`eat: ${eat}, food ${food} at ${hour}`);
+logFoodSchedule(...foodSchedule); // spread operator
 //                           rest operator
-var logFoodScheduleWithRest = function () {
-    var args = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
-    }
-    return console.log("eat: " + args[2] + ", food " + args[1] + " at " + args[0]);
-};
+const logFoodScheduleWithRest = (...args) => console.log(`eat: ${args[2]}, food ${args[1]} at ${args[0]}`);
 logFoodScheduleWithRest(20, 'Hamburguer', false);
-logFoodScheduleWithRest.apply(void 0, foodSchedule);
+logFoodScheduleWithRest(...foodSchedule);
 // Desestructuring (array)
-var carSpecs = ['Motor Zetec 2.1', 2021];
+const carSpecs = ['Motor Zetec 2.1', 2021];
 // const moto = carSpecs[0];
 // const year = carSpecs[1];
-var motor = carSpecs[0], year = carSpecs[1];
+const [motor, year] = carSpecs;
 console.log(carSpecs);
 console.log(motor);
 console.log(year);
 // Desestructuring (object)
-var item = {
+const item = {
     name: 'WaterColler 240ml',
     price: 350,
     measured: {
@@ -107,13 +90,13 @@ var item = {
         weight: 30,
     }
 };
-var itemname = item.name;
-var itemprice = item.price;
-var productName = item.name, productPrice = item.price, measured = item.measured;
+const itemname = item.name;
+const itemprice = item.price;
+const { name: productName, price: productPrice, measured } = item;
 console.log(productName, productPrice, measured);
 // Template Strings
-var site = 'studygram 42';
-var accessSite = 16546;
-console.log("O site " + site + " teve a quantidade de acessos: " + accessSite);
+const site = 'studygram 42';
+const accessSite = 16546;
+console.log(`O site ${site} teve a quantidade de acessos: ${accessSite}`);
 console.log('O site ' + site + ' teve a quantidade de acessos: ' + accessSite);
 //# sourceMappingURL=index.js.map
