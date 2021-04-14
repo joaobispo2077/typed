@@ -30,7 +30,7 @@ const waitForCallback = (second, callback) => setTimeout(() => callback(`Passara
 waitForCallback(3, function (data) {
     console.log(data);
 });
-const waitForPromise = (second) => new Promise((resolve, reject) => {
+const waitForPromise = (second) => new Promise((resolve) => {
     setTimeout(() => resolve(`Passaram ${second} segundos`), second * 1000);
 });
 waitForPromise(3.5).then(console.log);
