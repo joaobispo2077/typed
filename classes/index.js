@@ -31,8 +31,14 @@ class Product {
         this.price = price;
         this.discount = discount;
     }
+    resume() {
+        return `A ${this.name} custa ${this.priceWithDiscount()}`;
+    }
+    priceWithDiscount() {
+        return (this.price * (1 - this.discount));
+    }
 }
 const product1 = new Product('Bicileta', 825, 0.2);
 const product2 = new Product('Teclado', 3500);
-console.log(product1, product2);
+console.log(product1.resume());
 //# sourceMappingURL=index.js.map

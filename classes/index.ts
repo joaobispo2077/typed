@@ -35,9 +35,17 @@ console.log(personSmart);
 class Product{
   constructor(public name: string, public price: number, 
     public discount: number = 0){}
+  
+  public resume(): string {
+    return `A ${this.name} custa ${this.priceWithDiscount()}`;
+  }
+
+  public priceWithDiscount(): number {
+    return (this.price * (1 - this.discount));
+  }
 }
 
 const product1 = new Product('Bicileta', 825, 0.2);
 const product2 = new Product('Teclado', 3500);
 
-console.log(product1, product2 );
+console.log(product1.resume()) ;
