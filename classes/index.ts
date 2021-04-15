@@ -49,3 +49,40 @@ const product1 = new Product('Bicileta', 825, 0.2);
 const product2 = new Product('Teclado', 3500);
 
 console.log(product1.resume()) ;
+
+
+class Car {
+  private actualSpeed: number = 0;
+
+  constructor(
+    public brand: string, 
+    public model: string, 
+    private maxSpeed: number = 200
+  ) {}
+
+  private changeVelocity(delta: number): number {
+    const speed = this.actualSpeed + delta;
+    const isValidSpeed = speed >= 0 && speed <= this.maxSpeed;
+
+    if(isValidSpeed) this.actualSpeed = speed;
+    else this.actualSpeed = delta > 0 ? this.maxSpeed : 0;
+
+    return this.actualSpeed;
+  }
+
+  public accelerate(): number {
+    return this.changeVelocity(50);
+  }
+
+  public toBrake(): number {
+    return this.changeVelocity(-50);
+  }
+
+}
+
+const car1 = new Car('Tesla', 'Model 3');
+
+console.log(car1.accelerate());
+console.log(car1.accelerate());
+
+console.log(car1.toBrake());
