@@ -99,4 +99,13 @@ const person3 = new PersonWithAge();
 console.log(person3.age);
 console.log(person3.age = 20);
 console.log(person3.age);
+class Mathmatics {
+    static getCircleCircumference(radius) {
+        return this.PI * radius * radius;
+    }
+}
+Mathmatics.PI = 3.1416;
+console.log(Mathmatics.PI);
+console.log(Mathmatics.getCircleCircumference(4));
+console.log(Mathmatics.getCircleCircumference(4));
 //# sourceMappingURL=index.js.map
