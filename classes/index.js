@@ -136,4 +136,13 @@ summ.execute(2, 2, 2);
 multii.execute(2, 2, 2);
 console.log(summ.getResult());
 console.log(multii.getResult());
+class Singleton {
+    constructor() { }
+    static getInstance() {
+        if (Singleton.instance === null)
+            Singleton.instance = new Singleton();
+        return Singleton.instance;
+    }
+}
+const singleton = Singleton.getInstance();
 //# sourceMappingURL=index.js.map

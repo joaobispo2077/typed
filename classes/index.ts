@@ -174,3 +174,16 @@ multii.execute(2,2,2);
 console.log(summ.getResult());
 console.log(multii.getResult());
 
+class Singleton {
+  private constructor(){}
+  private static instance: Singleton;
+
+  public static getInstance(): Singleton {
+    if(Singleton.instance === null) Singleton.instance = new Singleton();
+
+    return Singleton.instance;
+  }
+
+}
+
+const singleton = Singleton.getInstance();
