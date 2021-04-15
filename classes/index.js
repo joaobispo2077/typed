@@ -136,6 +136,7 @@ summ.execute(2, 2, 2);
 multii.execute(2, 2, 2);
 console.log(summ.getResult());
 console.log(multii.getResult());
+// singleton
 class Singleton {
     constructor() { }
     static getInstance() {
@@ -143,6 +144,19 @@ class Singleton {
             Singleton.instance = new Singleton();
         return Singleton.instance;
     }
+    now() {
+        return Date.now;
+    }
 }
 const singleton = Singleton.getInstance();
+// Atributo somente leitura
+class Airplane {
+    constructor(model, id) {
+        this.id = id;
+        this.model = model;
+    }
+}
+const heliceTurbo = new Airplane('Tu-114', 545);
+console.log(heliceTurbo.id);
+// heliceTurbo.id = 33;
 //# sourceMappingURL=index.js.map
