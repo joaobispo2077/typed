@@ -50,7 +50,7 @@ const product2 = new Product('Teclado', 3500);
 
 console.log(product1.resume()) ;
 
-
+// methods of classes
 class Car {
   private actualSpeed: number = 0;
 
@@ -87,6 +87,8 @@ console.log(car1.accelerate());
 
 console.log(car1.toBrake());
 
+// inherite
+
 class Ferrari extends Car {
   constructor(model: string, maxSpeed: number = 200){
     super("Ferrari", model, maxSpeed);
@@ -107,6 +109,7 @@ console.log(f40.brand,f40.model);
 console.log(f40.accelerate());
 console.log(f40.toBrake());
 
+// getters and setters
 class PersonWithAge{
   private _age: number = 0;
 
@@ -124,6 +127,7 @@ console.log(person3.age);
 console.log(person3.age = 20);
 console.log(person3.age);
 
+// static attributtes and static methods
 class Mathmatics {
   public static PI: number = 3.1416;
 
@@ -139,3 +143,34 @@ console.log(Mathmatics.getCircleCircumference(4));
 
 
 console.log(Mathmatics.getCircleCircumference(4));
+
+abstract class Calc {
+  protected result: number = 0;
+
+  abstract execute(...numbers: number[]): void;
+
+  getResult(): number {
+    return this.result;
+  }
+}
+
+class Sum extends Calc {
+   execute(...numbers: number[]): void {
+    this.result = numbers.reduce((acc, number) => acc + number);
+  }
+}
+class Multi extends Calc {
+   execute(...numbers: number[]): void {
+    this.result = numbers.reduce((acc, number) => acc * number);
+  }
+}
+
+const summ = new Sum();
+const multii = new Multi();
+
+summ.execute(2,2,2);
+multii.execute(2,2,2);
+
+console.log(summ.getResult());
+console.log(multii.getResult());
+

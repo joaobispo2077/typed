@@ -41,6 +41,7 @@ class Product {
 const product1 = new Product('Bicileta', 825, 0.2);
 const product2 = new Product('Teclado', 3500);
 console.log(product1.resume());
+// methods of classes
 class Car {
     constructor(brand, model, maxSpeed = 200) {
         this.brand = brand;
@@ -68,6 +69,7 @@ const car1 = new Car('Tesla', 'Model 3');
 console.log(car1.accelerate());
 console.log(car1.accelerate());
 console.log(car1.toBrake());
+// inherite
 class Ferrari extends Car {
     constructor(model, maxSpeed = 200) {
         super("Ferrari", model, maxSpeed);
@@ -83,6 +85,7 @@ const f40 = new Ferrari('F40', 324);
 console.log(f40.brand, f40.model);
 console.log(f40.accelerate());
 console.log(f40.toBrake());
+// getters and setters
 class PersonWithAge {
     constructor() {
         this._age = 0;
@@ -99,6 +102,7 @@ const person3 = new PersonWithAge();
 console.log(person3.age);
 console.log(person3.age = 20);
 console.log(person3.age);
+// static attributtes and static methods
 class Mathmatics {
     static getCircleCircumference(radius) {
         return this.PI * radius * radius;
@@ -108,4 +112,28 @@ Mathmatics.PI = 3.1416;
 console.log(Mathmatics.PI);
 console.log(Mathmatics.getCircleCircumference(4));
 console.log(Mathmatics.getCircleCircumference(4));
+class Calc {
+    constructor() {
+        this.result = 0;
+    }
+    getResult() {
+        return this.result;
+    }
+}
+class Sum extends Calc {
+    execute(...numbers) {
+        this.result = numbers.reduce((acc, number) => acc + number);
+    }
+}
+class Multi extends Calc {
+    execute(...numbers) {
+        this.result = numbers.reduce((acc, number) => acc * number);
+    }
+}
+const summ = new Sum();
+const multii = new Multi();
+summ.execute(2, 2, 2);
+multii.execute(2, 2, 2);
+console.log(summ.getResult());
+console.log(multii.getResult());
 //# sourceMappingURL=index.js.map
