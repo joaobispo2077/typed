@@ -68,4 +68,35 @@ const car1 = new Car('Tesla', 'Model 3');
 console.log(car1.accelerate());
 console.log(car1.accelerate());
 console.log(car1.toBrake());
+class Ferrari extends Car {
+    constructor(model, maxSpeed = 200) {
+        super("Ferrari", model, maxSpeed);
+    }
+    accelerate() {
+        return this.changeVelocity(70);
+    }
+    toBrake() {
+        return this.changeVelocity(-65);
+    }
+}
+const f40 = new Ferrari('F40', 324);
+console.log(f40.brand, f40.model);
+console.log(f40.accelerate());
+console.log(f40.toBrake());
+class PersonWithAge {
+    constructor() {
+        this._age = 0;
+    }
+    get age() {
+        return this._age;
+    }
+    set age(value) {
+        if (value >= 0 && value <= 120)
+            this._age = value;
+    }
+}
+const person3 = new PersonWithAge();
+console.log(person3.age);
+console.log(person3.age = 20);
+console.log(person3.age);
 //# sourceMappingURL=index.js.map
