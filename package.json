@@ -10,7 +10,10 @@
     "dev:compile": "tsc -w"
   },
   "dependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.1",
+    "systemjs": "0.21.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "^14.14.41"
+  }
 }
