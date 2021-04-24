@@ -31,4 +31,32 @@ const worker: Human = {
 
 worker.greeting('Skywalker');
 sayHelloToWorker(worker);
-sayHelloToWorker({ name: 'Teste',   age: 15, xyz: true});
+// sayHelloToWorker({ name: 'Teste',   age: 15, xyz: true});
+
+// Classes
+
+class Client implements Human {
+  name: string = '';
+  lastAcess: Date = new Date();
+  greeting(lastname : string): void {
+    console.log(`Hy my name is ${this.name} ${lastname}`);
+  }
+}
+
+const client = new Client();
+client.name = 'Han';
+client.greeting('Solo');
+console.log(client);
+
+// functions
+
+interface Calculator {
+  (a: number, b: number): number;
+};
+
+// const potency: Calculator = (base: number, exponent: number): number => Math.pow(base, exponent);
+// const potency: Calculator = (base: number, exponent: number): number => base ** exponent;
+// const potency: Calculator = (base: number, exponent: number): number => Array.from(new Array(exponent)).reduce(multiplicator => multiplicator * multiplicator, base);
+const potency: Calculator = (base: number, exponent: number): number => Array(exponent).fill(base).reduce((acc,multiplicator)=> acc * multiplicator);
+
+console.log(potency(2,1));
