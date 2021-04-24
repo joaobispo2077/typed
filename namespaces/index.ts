@@ -1,16 +1,5 @@
-namespace Areas {
-  const PI = 3.14;
-  
-  export const getCircleCircumferenceByRadius = (radius: number): number => {
-    return PI * Math.pow(radius, 2);
-  }
-  
-  export const getRectangleBySides = (base: number, height: number): number => {
-    return base * height;
-  }
+///<reference path="circle.ts"/>
+///<reference path="rectangle.ts"/>
 
-}
-
-
-console.log(Areas.getCircleCircumferenceByRadius(10));
-console.log(Areas.getRectangleBySides(10, 20));
+console.log(Geometry.Area.getCircleCircumferenceByRadius(10));
+console.log( Geometry.Area.getRectangleBySides(10, 20));
