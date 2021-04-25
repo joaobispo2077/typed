@@ -104,4 +104,56 @@ class Datenator extends Concatenator {
 console.log(new Stringnator('Bom', 'Dia').execute());
 console.log(new Numberator(2, 2).execute());
 console.log(new Datenator({ day: 25, month: 10, year: 2020 }, { day: 10, month: 2, year: 2019 }).execute());
+//  Challenge
+// Make a Queue Class
+// Attributtes queue/items Array
+// metodos add, next, show
+class Queue {
+    constructor(items) {
+        this.items = items;
+    }
+    show() {
+        console.log(this.items);
+    }
+    add(item) {
+        this.show();
+        this.items.push(item);
+        this.show();
+    }
+    next() {
+        this.show();
+        if (this.items.length > 0) {
+            const item = this.items[0];
+            this.items = this.items.slice(1);
+            this.show();
+            return item;
+        }
+        else {
+            return null;
+        }
+    }
+}
+const students = new Queue(['John', 'Vivi']);
+students.add('Sofia');
+students.next();
+const resultsOfProves = new Queue([2, 10, 9.5, 8.7, 6.5]);
+resultsOfProves.add(3);
+resultsOfProves.next();
+const ProductsAndPrice = new Queue([35, 'Pen drive', 400, 'Teclado']);
+ProductsAndPrice.add(300);
+ProductsAndPrice.add('Mouse');
+ProductsAndPrice.next();
+ProductsAndPrice.next();
+const pokemons = new Queue([{ name: 'Pikachu', type: 'Thunder' }]);
+const pokemon = {
+    name: 'Charizard',
+    type: 'Fire'
+};
+pokemons.add(pokemon);
+pokemons.next();
+class QueueNumber extends Queue {
+}
+const resultsOfProves2 = new QueueNumber([2, 10, 9.5, 8.7, 6.5]);
+resultsOfProves2.add(3);
+resultsOfProves2.next();
 //# sourceMappingURL=index.js.map
