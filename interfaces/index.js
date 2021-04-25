@@ -39,4 +39,22 @@ console.log(client);
 // const potency: Calculator = (base: number, exponent: number): number => Array.from(new Array(exponent)).reduce(multiplicator => multiplicator * multiplicator, base);
 const potency = (base, exponent) => Array(exponent).fill(base).reduce((acc, multiplicator) => acc * multiplicator);
 console.log(potency(2, 1));
+class RealA {
+    a() { }
+    ;
+}
+class RealAB {
+    a() { }
+    ;
+    b() { }
+    ;
+}
+class RealABC {
+    a() { }
+    ;
+    b() { }
+    ;
+    c() { }
+    ;
+}
 //# sourceMappingURL=index.js.map
