@@ -21,14 +21,7 @@ function decorator(obj: { a: string, b: number}){
   }
 }
 
-// @showClass
-// @decorator({a:'ATA', b: 23})
-// @showClassWhen(true)
 
-@showObject
-class Eletronics {
-
-}
 
 function showObject(constructor: Constructor) {
   console.log('decorator carregado');
@@ -42,7 +35,34 @@ function showObject(constructor: Constructor) {
   }
 }
 
-new Eletronics()
-new Eletronics()
-new Eletronics()
-new Eletronics()
+// new Eletronics()
+// new Eletronics()
+// new Eletronics()
+// new Eletronics()
+
+// @showClass
+// @decorator({a:'ATA', b: 23})
+// @showClassWhen(true)
+//@showObject
+
+interface Eletronics {
+  readable?(): void;
+}
+@addReadable
+class Eletronics {
+  constructor() {
+    console.log('new eletronics :D')
+  }
+}
+
+function addReadable(constructor: Function){
+  constructor.prototype.readable = function () {
+    console.log(this);
+  }
+}
+
+// casting to any type
+//(<any>new Eletronics()).readable()
+const eletronic = new Eletronics(); // 
+
+eletronic.readable && eletronic.readable()

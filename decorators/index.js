@@ -22,14 +22,6 @@ function decorator(obj) {
         console.log(constructor);
     };
 }
-// @showClass
-// @decorator({a:'ATA', b: 23})
-// @showClassWhen(true)
-let Eletronics = class Eletronics {
-};
-Eletronics = __decorate([
-    showObject
-], Eletronics);
 function showObject(constructor) {
     console.log('decorator carregado');
     return class extends constructor {
@@ -40,8 +32,21 @@ function showObject(constructor) {
         }
     };
 }
-new Eletronics();
-new Eletronics();
-new Eletronics();
-new Eletronics();
+let Eletronics = class Eletronics {
+    constructor() {
+        console.log('new eletronics :D');
+    }
+};
+Eletronics = __decorate([
+    addReadable
+], Eletronics);
+function addReadable(constructor) {
+    constructor.prototype.readable = function () {
+        console.log(this);
+    };
+}
+// casting to any type
+//(<any>new Eletronics()).readable()
+const eletronic = new Eletronics(); // 
+eletronic.readable && eletronic.readable();
 //# sourceMappingURL=index.js.map
