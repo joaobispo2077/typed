@@ -32,12 +32,16 @@ function showObject(constructor) {
         }
     };
 }
+// @showClass
+// @decorator({a:'ATA', b: 23})
+// @showClassWhen(true)
 let Eletronics = class Eletronics {
     constructor() {
         console.log('new eletronics :D');
     }
 };
 Eletronics = __decorate([
+    showObject,
     addReadable
 ], Eletronics);
 function addReadable(constructor) {

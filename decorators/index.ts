@@ -40,14 +40,14 @@ function showObject(constructor: Constructor) {
 // new Eletronics()
 // new Eletronics()
 
-// @showClass
-// @decorator({a:'ATA', b: 23})
-// @showClassWhen(true)
-//@showObject
 
 interface Eletronics {
   readable?(): void;
 }
+// @showClass
+// @decorator({a:'ATA', b: 23})
+// @showClassWhen(true)
+@showObject
 @addReadable
 class Eletronics {
   constructor() {
@@ -66,3 +66,4 @@ function addReadable(constructor: Function){
 const eletronic = new Eletronics(); // 
 
 eletronic.readable && eletronic.readable()
+
