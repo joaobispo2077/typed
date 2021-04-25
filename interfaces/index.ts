@@ -94,3 +94,29 @@ abstract class AbstractABD implements A, B {
   b(): void{};
   abstract d(): void; 
 }
+
+// Interface and Object
+
+interface Object {
+  log(): void;
+}
+
+Object.prototype.log = function() {
+  console.log(this.toString());
+}
+
+const k = 2;
+const n = 3;
+const p = 4;
+
+k.log();
+n.log();
+p.log();
+
+
+const cli = { 
+  name: 'abc', 
+  toString(){
+    return this.name} 
+  };
+cli.log();

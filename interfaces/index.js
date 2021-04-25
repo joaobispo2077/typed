@@ -57,4 +57,26 @@ class RealABC {
     c() { }
     ;
 }
+class AbstractABD {
+    a() { }
+    ;
+    b() { }
+    ;
+}
+Object.prototype.log = function () {
+    console.log(this.toString());
+};
+const k = 2;
+const n = 3;
+const p = 4;
+k.log();
+n.log();
+p.log();
+const cli = {
+    name: 'abc',
+    toString() {
+        return this.name;
+    }
+};
+cli.log();
 //# sourceMappingURL=index.js.map
