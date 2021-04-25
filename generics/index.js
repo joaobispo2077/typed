@@ -43,4 +43,65 @@ logger([{ name: 'John', age: 21 },
 logger([{ name: 'John', age: 21 },
     { name: 'John', age: 21 },
     { name: 'John', age: 21 }]);
+const callEcho = echoG;
+console.log(callEcho('Testing'));
+// Type Generic with Classes
+class ConcatenatorWithoutGenerics {
+    constructor(firstConcat, secondConcat) {
+        this.firstConcat = firstConcat;
+        this.secondConcat = secondConcat;
+    }
+    execute() {
+        return `${this.firstConcat} ${this.secondConcat}`;
+    }
+}
+new ConcatenatorWithoutGenerics('Bom', 'Dia');
+console.log(new ConcatenatorWithoutGenerics('Bom', 'Dia').execute());
+console.log(new ConcatenatorWithoutGenerics(2, 3).execute());
+console.log(new ConcatenatorWithoutGenerics(3, 'Woops').execute());
+console.log(new ConcatenatorWithoutGenerics({}, 'Woops').execute());
+// with generics 
+class Concatenator {
+    constructor(firstConcat, secondConcat) {
+        this.firstConcat = firstConcat;
+        this.secondConcat = secondConcat;
+    }
+    ;
+}
+class Stringnator extends Concatenator {
+    execute() {
+        return `${this.firstConcat} ${this.secondConcat}`;
+    }
+    ;
+}
+class Numberator extends Concatenator {
+    execute() {
+        return this.firstConcat + this.secondConcat;
+    }
+    ;
+}
+class Data {
+    constructor(day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    }
+}
+class Datenator extends Concatenator {
+    getTime(date) {
+        const { day, month, year } = date;
+        return new Date(`${month}/${day}/${year}`).getTime();
+    }
+    execute() {
+        const date1 = this.getTime(this.firstConcat);
+        const date2 = this.getTime(this.secondConcat);
+        const remainTime = Math.abs(date1 - date2);
+        const days = 1000 * 60 * 60 * 24;
+        const remainDays = Math.ceil(remainTime / days);
+        return `${remainDays} dia(s)`;
+    }
+}
+console.log(new Stringnator('Bom', 'Dia').execute());
+console.log(new Numberator(2, 2).execute());
+console.log(new Datenator({ day: 25, month: 10, year: 2020 }, { day: 10, month: 2, year: 2019 }).execute());
 //# sourceMappingURL=index.js.map

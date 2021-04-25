@@ -71,3 +71,71 @@ logger<IStudent>(
   { name: 'John', age: 21}]
 );
 
+// Type Generic with Functions
+type Echo = <T>(data: T) => T;
+
+const callEcho: Echo = echoG;
+
+console.log(callEcho<string>('Testing'));
+
+// Type Generic with Classes
+
+class ConcatenatorWithoutGenerics {
+  constructor(public firstConcat: any, public secondConcat: any){}
+  execute(){
+    return `${this.firstConcat} ${this.secondConcat}`;
+  }
+}
+
+new ConcatenatorWithoutGenerics('Bom', 'Dia');
+console.log(new ConcatenatorWithoutGenerics('Bom', 'Dia').execute());
+console.log(new ConcatenatorWithoutGenerics(2, 3).execute());
+console.log(new ConcatenatorWithoutGenerics(3, 'Woops').execute());
+console.log(new ConcatenatorWithoutGenerics({}, 'Woops').execute());
+
+// with generics 
+abstract class Concatenator<T, R>{
+  constructor(public firstConcat: T, public secondConcat: T){};
+  abstract execute(): R;
+}
+
+class Stringnator extends Concatenator<string, string> {
+  execute(): string{
+    return `${this.firstConcat} ${this.secondConcat}`;
+  };
+}
+
+class Numberator extends Concatenator<number, number> {
+  execute(): number{
+    return this.firstConcat + this.secondConcat;
+  };
+}
+
+class Data {
+  constructor(public day: number, public month: number, public year: number){}
+}
+class Datenator extends Concatenator<Data, string> {
+  getTime(date: Data): number {
+    const { day, month, year } = date;
+
+    return new Date(`${month}/${day}/${year}`).getTime();
+  }
+  execute(): string {
+    const date1 = this.getTime(this.firstConcat);
+    const date2 = this.getTime(this.secondConcat);
+    const remainTime = Math.abs(date1 - date2);
+
+    const days = 1000 * 60 * 60 * 24;
+
+    const remainDays = Math.ceil(remainTime / days);
+
+    return `${remainDays} dia(s)`;
+  }
+}
+
+console.log(new Stringnator('Bom', 'Dia').execute());
+console.log(new Numberator(2, 2).execute());
+console.log(new Datenator(
+  {day: 25, month: 10, year:2020 },
+  {day: 10, month: 2, year: 2019 },
+  ).execute());
