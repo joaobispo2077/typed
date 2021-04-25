@@ -12,7 +12,7 @@ console.log(rawEcho([{ catname: 'Mia', age: 7 }, { catname: 'Doug', age: 4 }]));
 function echoG(obj) {
     return obj;
 }
-console.log(echoG(2).length); // erro na compilação do TS
+// console.log(echoG(2).length); // erro na compilação do TS
 console.log(echoG(2)); // forçar que o Generic assuma um Tipo
 console.log(echoG('Teste').length);
 console.log(echoG({ name: 'John', age: 21 }).name);
@@ -23,7 +23,7 @@ console.log(echoG([{ catname: 'Mia', age: 7 }, { catname: 'Doug', age: 4 }]).len
 //-- assign type in a generic constructor as class array
 const assessments = [2, 10, 3.9, 7.7];
 assessments.push(8.2);
-assessments.push('5.9');
+// assessments.push('5.9'); //error here
 console.log(assessments);
 // Array with generics
 function logger(args) {
