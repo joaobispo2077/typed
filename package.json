@@ -1,0 +1,12 @@
+{
+  "name": "typed",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/joaobispo2077/typed",
+  "author": "João Bispo <joaobispo2077@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
