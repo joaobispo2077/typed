@@ -23,7 +23,3 @@ body2.style.background = 'red';
 
 // Type assertion using casting
 const body4 = (document.querySelector('body') as unknown) as number;
-
-//----------------------------------------------------------------
-
-const message = 'EU AMO VOCÊ VIVIANE!!!<3';
