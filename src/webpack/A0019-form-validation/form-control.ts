@@ -20,6 +20,8 @@ form.addEventListener('submit', function (event) {
   const confirmPass = document.querySelector('#password2') as HTMLInputElement;
 
   validateForm(username, email, password, confirmPass);
+
+  if (shouldSendForm(this)) console.log('Formulário enviado');
 });
 
 const checkForEmptyFields = (...inputs: HTMLInputElement[]): void => {
@@ -69,4 +71,11 @@ function showErrorMessage(input: HTMLInputElement, message: string): void {
 
   errorMessage.innerHTML = message;
   formField.classList.add(SHOW_ERROR_MESSAGE);
+}
+
+function shouldSendForm(form: HTMLFormElement): boolean {
+  const spanErrors = form.querySelectorAll(`.${SHOW_ERROR_MESSAGE}`) || [];
+
+  const sendForm = spanErrors.length === 0;
+  return sendForm;
 }
