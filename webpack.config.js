@@ -3,13 +3,14 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/webpack/A0018-webpack/index.ts',
+  entry: './src/webpack/A0019-form-validation/index.ts',
   devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        loader: 'ts-loader',
+        options: { configFile: 'tsconfig.frontend.json' },
         exclude: /node_modules/,
       },
     ],
@@ -19,6 +20,6 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist', 'assets', 'js'),
+    path: path.resolve(__dirname, 'frontend', 'assets', 'js'),
   },
 };
