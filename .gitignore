@@ -4,7 +4,7 @@
 
 ### custom ###
 *.mp4
-
+tempCodeRunnerFile.*
 ### Node ###
 # Logs
 logs
